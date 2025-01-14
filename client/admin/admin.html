@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Admin Dashboard</h1>
+        <button onclick="logout()" class="logout-btn">Logout</button>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Subject Form -->
+        <div class="card">
+          <h2 id="formTitle">Add New Subject</h2>
+          <form id="subjectForm">
+            <div class="form-group">
+              <label>Courses</label>
+              <!-- <input type="text" id="code" required /> -->
+              <select id="branch" required>
+                <option value="CHE">CHE</option>
+                <option value="BME">BME</option>
+                <option value="CE">CE</option>
+                <option value="EL">EL</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Semester</label>
+              <select id="semester" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Subject Name</label>
+              <select id="subjectName" required>
+                <!-- Options will be populated dynamically -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Subject Code</label>
+              <input type="text" id="subjectCode" required readonly />
+            </div>
+
+            <div class="form-group">
+              <label>Akash URL</label>
+              <input type="url" id="akashUrl" />
+            </div>
+
+            <div class="form-group">
+              <label>Book URL</label>
+              <input type="url" id="bookUrl" />
+            </div>
+
+            <div class="form-group">
+              <label>Paper Analysis URL</label>
+              <input type="url" id="paperAnalysisUrl" />
+            </div>
+
+           
+               <div class="form-section">
+              <h3>Syllabus</h3>
+              <div id="sylList" class="items-list"></div>
+              <div class="add-sly-group">
+                <input  type="text" id="sylUnit" placeholder="Unit" />
+                <input type="text" id="sylTitle" placeholder="Title" />
+                <textarea name="" id="sylContent" rows="5" cols="33"></textarea>
+                <button type="button" onclick="addSyllabus()">Add Syllabus</button>
+              </div>
+            </div>
+
+
+              
+        
+            
+
+            <!-- Notes Section -->
+            <div class="form-section">
+              <h3>Notes</h3>
+              <div id="notesList" class="items-list"></div>
+              <div class="add-item-group">
+                <input type="text" id="noteName" placeholder="Note name" />
+                <input type="url" id="noteUrl" placeholder="URL" />
+                <button type="button" onclick="addNote()">Add Note</button>
+              </div>
+            </div>
+
+           
+    
+
+            <!-- YouTube Section -->
+            <div class="form-section">
+              <h3>YouTube Videos</h3>
+              <div id="videosList" class="items-list"></div>
+              <div class="add-item-group">
+                <input type="text" id="videoName" placeholder="Video name" />
+                <input type="url" id="videoUrl" placeholder="URL" />
+                <button type="button" onclick="addVideo()">Add Video</button>
+              </div>
+            </div>
+
+              
+
+            <button type="submit" class="submit-btn">Add Subject</button>
+          </form>
+        </div>
+
+        <!-- Subjects List -->
+        <div class="card">
+          <h2>Subjects List</h2>
+          <div id="subjectsList" class="subjects-list"></div>
+        </div>
+      </div>
+      <!-- <div class="card"></div> -->
+ 
+</div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      function logout() {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.href = "/login";
+      }
+
+      // Check if user is logged in and is admin
+      window.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem("token");
+        const user = JSON.parse(localStorage.getItem("user"));
+
+        if (!token || !user) {
+          window.location.href = "/login";
+          return;
+        }
+
+        // Redirect non-admin users to home page
+        if (user.role !== "admin") {
+          window.location.href = "/";
+        }
+      });
+
+      const subjectOptions = {
+        CHE: {
+          1: [
+            "Mathematics – I",
+            "Technical Communication",
+            "Programming with C",
+            "Introduction to Computers & IT",
+            "Physics",
+          ],
+          2: [
+            "Mathematics – II",
+            "Principles of Management",
+            "Digital Electronics",
+            "Data Structure using C",
+            "Database Management System",
+          ],
+          3: [
+            "Mathematics – III",
+            "Computer Architecture",
+            "Front End Design Tool VB.Net",
+            "Principles of Accounting",
+            "Object Oriented Programming using C++",
+          ],
+          4: [
+            "Mathematics – IV",
+            "Web Technologies",
+            "Java Programming",
+            "Software Engineering",
+            "Computer Networks",
+          ],
+          5: [
+            "Operating System",
+            "Computer Graphics",
+            "E- Commerce",
+            "Software Testing",
+            "Microprocessor",
+            "Advance Computer Networks",
+            "Web Based Programming",
+            "Business Economics",
+          ],
+          6: [
+            "Data Ware Housing & Data Mining",
+            "Mobile Computing",
+            "Linux Environment",
+            "Multimedia & Its Applications",
+            "Bio Informatics",
+            "Artifical Intelligence",
+            "Network Security",
+            "Network Programming",
+          ],
+        },
+        CE: {
+          1: [
+            "Maths 1",
+            "Technical Communication",
+            "Programming with C",
+            "Introduction to Computers & IT",
+            "Physics",
+          ],
+          2: [
+            "Maths 2",
+            "Principles of Management",
+            "Digital Electronics",
+            "Data Structure using C",
+            "Database Management System",
+          ],
+          3: [
+            "Mathematics – III",
+            "Computer Architecture",
+            "Front End Design Tool VB.Net",
+            "Principles of Accounting",
+            "Object Oriented Programming using C++",
+          ],
+          4: [
+            "Mathematics – IV",
+            "Web Technologies",
+            "Java Programming",
+            "Software Engineering",
+            "Computer Networks",
+          ],
+          5: [
+            "Operating System",
+            "Computer Graphics",
+            "E- Commerce",
+            "Software Testing",
+            "Microprocessor",
+            "Advance Computer Networks",
+            "Web Based Programming",
+            "Business Economics",
+          ],
+          6: [
+            "Data Ware Housing & Data Mining",
+            "Mobile Computing",
+            "Linux Environment",
+            "Multimedia & Its Applications",
+            "Bio Informatics",
+            "Artifical Intelligence",
+            "Network Security",
+            "Network Programming",
+          ],
+        },
+        // Add other branches as needed
+      };
+
+      function updateSubjectCodes() {
+        const branch = document.getElementById("branch").value;
+        const semester = document.getElementById("semester").value;
+        const subjectNameSelect = document.getElementById("subjectName");
+        const subjectCodeInput = document.getElementById("subjectCode");
+
+        subjectNameSelect.innerHTML =
+          '<option value="">Select Subject</option>'; // Clear existing options
+
+        if (subjectOptions[branch] && subjectOptions[branch][semester]) {
+          subjectOptions[branch][semester].forEach((subject, index) => {
+            const option = document.createElement("option");
+            option.value = subject;
+            option.textContent = subject;
+            subjectNameSelect.appendChild(option);
+          });
+        }
+
+        // Update subject code when subject name changes
+        subjectNameSelect.addEventListener("change", function () {
+          const selectedSubject = this.value;
+          if (selectedSubject) {
+            const subjectIndex =
+              subjectOptions[branch][semester].indexOf(selectedSubject);
+            const codeNumber = parseInt(semester) * 100 + (subjectIndex + 1);
+            subjectCodeInput.value = `${branch} ${codeNumber}`;
+          } else {
+            subjectCodeInput.value = "";
+          }
+        });
+      }
+
+      // Add event listeners
+      document
+        .getElementById("branch")
+        .addEventListener("change", updateSubjectCodes);
+      document
+        .getElementById("semester")
+        .addEventListener("change", updateSubjectCodes);
+
+      // Call once to initialize
+      document.addEventListener("DOMContentLoaded", updateSubjectCodes);
+
+      // Add event listeners for form submission
+      document
+        .getElementById("subjectForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          console.log("Submitting subject data..."); // Debug log
+
+          const formData = {
+            branch: document.getElementById("branch").value,
+            semester: document.getElementById("semester").value,
+            subjectName: document.getElementById("subjectName").value,
+            code: document.getElementById("subjectCode").value,
+            akashUrl: document.getElementById("akashUrl").value || "",
+            bookUrl: document.getElementById("bookUrl").value || "",
+            paperAnalysisUrl:
+              document.getElementById("paperAnalysisUrl").value || "",
+            notes: notes,
+            youtube: videos,
+            syllabus: syllabus,
+          };
+
+          console.log("Form data:", formData); // Debug log
+
+          try {
+            const BASE_URL =
+              window.location.hostname === "localhost"
+                ? "http://localhost:5000"
+                : "";
+            const response = await fetch(`${BASE_URL}/api/admin/subjects`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            });
+
+            // First check if response is ok
+            if (!response.ok) {
+              let errorMessage;
+              try {
+                const errorData = await response.json();
+                errorMessage = errorData.message;
+              } catch (e) {
+                console.error("Error parsing error response:", e);
+                errorMessage = "Server connection error. Please try again.";
+              }
+              throw new Error(errorMessage);
+            }
+
+            const result = await response.json();
+            console.log("Server response:", result);
+
+            alert("Subject added successfully!");
+            location.reload();
+          } catch (error) {
+            console.error("Full error:", error);
+            console.error("Error adding subject:", error);
+            alert("Error: " + error.message);
+          }
+        });
+    </script>
+  </body>
+</html>

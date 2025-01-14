@@ -31,8 +31,8 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/anim.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/anim.css" />
 
     <!-- icon library -->
     <link
@@ -86,28 +86,42 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mt-2 mt-md-0 text-center">
+          <li class="nav-item"></li>
+            <a class="nav-link" href="./admin/admin.html" >Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="logout()">Logout</a>
+          </li>
+          <script>
+            function logout() {
+              localStorage.removeItem("token");
+              localStorage.removeItem("user");
+              window.location.href = "/login";
+            }
+          </script>
+
           <li class="nav-item text-center">
-            <a class="nav-link" href="./">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
 
           <li class="nav-item dropdown active">
             <a
               class="nav-link dropdown-toggle"
-              href="../pages/course.html"
+              href="/course"
               role="button"
             >
               Courses<span class="sr-only">(current)</span>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="../pages/semester.html">CHE</a>
-              <a class="dropdown-item" href="../pages/semester1.html">CE</a>
-              <a class="dropdown-item" href="../pages/semester2.html">EL</a>
-              <a class="dropdown-item" href="../pages/semester3.html">BME</a>
+              <a class="dropdown-item" href="/semester">CHE</a>
+              <a class="dropdown-item" href="/semester1">CE</a>
+              <a class="dropdown-item" href="/semester2">EL</a>
+              <a class="dropdown-item" href="/semester3">BME</a>
             </div>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../pages/about.html">About Us</a>
+            <a class="nav-link" href="./about.html">About Us</a>
           </li>
           <li class="nav-item d-lg-none">
             <a class="nav-link" onclick="changePageTheme()">Change Theme</a>
@@ -134,16 +148,13 @@
             class="col-md-6 come-in2 d-flex align-items-center flex-column my-auto"
           >
             <img
-              src="../images/nomtes_250.png"
+              src="./images/nomtes_250.png"
               alt="Nomtes"
               class="nomtes_icon"
             />
             <div id="nomtes">NOTE NEXUS</div>
             <div id="innertext">Library For Study Materials</div>
-            <button
-              class="btn mt-4"
-              onclick="location.href='../pages/course.html';"
-            >
+            <button class="btn mt-4" onclick="location.href='./course.html';">
               <i class="fa fa-book pr-2" aria-hidden="true"></i> Courses
             </button>
           </div>
@@ -163,7 +174,7 @@
           target="_blank"
         >
           <img
-            src="../images/x_30.png"
+            src="./images/x_30.png"
             alt="Xbotics7"
             height="26px"
             class="mr-3 mb-md-3"
@@ -205,5 +216,23 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"
   ></script>
-  <script src="../js/main.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+    // Check if user is logged in
+    window.addEventListener('DOMContentLoaded', () => {
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user'));
+        
+        if (!token) {
+            window.location.href = '/login';
+            return;
+        }
+
+        // Hide admin elements if user is not admin
+        if (user.role !== 'admin') {
+            const adminElements = document.querySelectorAll('.admin-only');
+            adminElements.forEach(el => el.style.display = 'none');
+        }
+    });
+  </script>
 </html>

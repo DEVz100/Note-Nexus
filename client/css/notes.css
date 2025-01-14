@@ -1,256 +1,349 @@
 body {
-    background-image: linear-gradient(to right, #578FA8, #152F41);
-    color: white;
-    /* background-image: url("images/pattern_bg.svg"); */
-    font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(to right, #578fa8, #152f41);
+  color: white;
+  /* background-image: url("images/pattern_bg.svg"); */
+  font-family: "Montserrat", sans-serif;
 }
 
 .course-title {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .course-info {
-    margin-top: 20px;
-    display: flex;
+  margin-top: 20px;
+  display: flex;
 }
 
-.course-info>* {
-    font-size: 1.3em;
+.course-info > * {
+  font-size: 1.3em;
 }
 
 .course-second-cont {
-    display: flex;
+  display: flex;
 }
 
-.course-second-cont>* {
-    font-size: 0.8em;
+.course-second-cont > * {
+  font-size: 0.8em;
 }
 
 #sem-title {
-    margin-top: -5px;
-    color: white;
+  margin-top: -5px;
+  color: white;
 }
 
 #sem-title:hover {
-    color: white;
+  color: white;
 }
 
 .notesBtn {
-    text-decoration: none;
-    display: block;
-    color: white;
-    width: 100%;
-    max-width: 60%;
-    background-color: rgb(255, 255, 255, 10%);
-    border-top: 1px solid #ffffff1e;
-    padding: 30px;
-    text-align: center;
-    font-size: 1.6em;
-    transition: all .3s ease-out;
-}
-
-.notesBtn:nth-child(3) {
-    margin-top: 25px;
-    border-radius: 10px 10px 0 0;
-    border-top: none;
+  text-decoration: none;
+  display: block;
+  color: white;
+  width: 100%;
+  max-width: 60%;
+  background-color: rgb(255, 255, 255, 10%);
+  border-top: 1px solid #ffffff1e;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.6em;
+  transition: all 0.3s ease-out;
 }
 
 .notesBtn:last-child {
-    border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
 }
 
 .notesBtn:hover {
-    text-decoration: none;
-    color: white;
-    background-color: rgb(255, 255, 255, 10%);
-    transform: scale(1.05);
+  text-decoration: none;
+  color: white;
+  background-color: rgb(255, 255, 255, 10%);
+  transform: scale(1.05);
 }
 
 .notesPopBtn {
-    text-decoration: none;
-    display: block;
-    color: white;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.144);
-    padding: 20px;
-    text-align: center;
-    font-size: 1.3em;
-    margin-top: 10px;
-    border-radius: 15px;
-    transition: all .3s ease-out;
+  text-decoration: none;
+  display: block;
+  color: white;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.144);
+  padding: 20px;
+  text-align: center;
+  font-size: 1.3em;
+  margin-top: 10px;
+  border-radius: 15px;
+  transition: all 0.3s ease-out;
 }
 
 .notesPopBtn:hover {
-    text-decoration: none;
-    color: white;
-    background-color: rgb(255, 255, 255, 10%);
-    transform: scale(1.05);
+  text-decoration: none;
+  color: white;
+  background-color: rgb(255, 255, 255, 10%);
+  transform: scale(1.05);
 }
 
 .main-cont {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 62px);
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 62px);
 }
 
 .sub-drop {
-    margin-top: -5px;
+  margin-top: -5px;
 }
 
 #sub-title {
-    color: white;
-    text-decoration: none;
-    border: 1px rgb(21, 209, 209) solid;
-    border-radius: 5px;
-    padding: 5px 18px;
-    font-size: 0.8em;
+  color: white;
+  text-decoration: none;
+  border: 1px rgb(21, 209, 209) solid;
+  border-radius: 5px;
+  padding: 5px 18px;
+  font-size: 0.8em;
 }
 
 #sub-title:hover {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .sub-drop-menu {
-    padding: 0;
-    border: 0;
+  padding: 0;
+  border: 0;
 }
 
 .modal-content {
-    background-color: #0A7AC2;
-    border: none;
-    padding: 10px 20px;
-    padding-bottom: 30px;
+  background-color: #0a7ac2;
+  border: none;
+  padding: 30px;
+  padding-bottom: 30px;
 }
 
 .modal-header {
-    border: none;
-    padding-bottom: 0;
+  border: none;
+  padding-bottom: 0;
 }
 
 .close {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 .sub-drop-menu .dropdown-item:last-child {
-    border: 0;
+  border: 0;
 }
 
 .sub-drop-menu .dropdown-item {
-    display: flex;
-    justify-content: center;
-    padding: 10px 60px;
-    border-bottom: 1px solid #ebebebb8;
+  display: flex;
+  justify-content: center;
+  padding: 10px 60px;
+  border-bottom: 1px solid #ebebebb8;
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+}
+
+.sub-drop-menu .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+}
+
+.dropdown-toggle::after {
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
+.sub-drop-menu {
+  background-color: var(--background);
+  border: 1px solid var(--border-color);
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .sly-unit {
-    text-transform: capitalize;
-    font-size: 1.0em;
+  text-transform: capitalize;
+  font-size: 1em;
 }
 
 .sly-title {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .sly-cont {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 #course-sly {
-    background-color: rgb(255, 255, 255, 10%);
-    border-radius: 10px;
-    padding: 25px 25px 0px 25px;
-    margin-left: auto;
-    margin-right: 60px;
-    max-width: 700px;
-    width: 100%;
-    overflow-y: auto;
-    max-height: calc(100vh - 160px);
+  background-color: rgb(255, 255, 255, 10%);
+  border-radius: 10px;
+  padding: 25px 25px 0px 25px;
+  margin-left: auto;
+  margin-right: 60px;
+  max-width: 700px;
+  width: 100%;
+  overflow-y: auto;
+  max-height: calc(100vh - 160px);
 }
 
 .row-cont {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
-
 .toast {
-    position: absolute;
-    bottom: 10px;
-    left: 43%;
-    font-size: 1.1em;
-    border: 0;
-    max-width: 400px;
+  position: absolute;
+  bottom: 10px;
+  left: 43%;
+  font-size: 1.1em;
+  border: 0;
+  max-width: 400px;
 }
 
 /* width */
 
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 /* Track */
 
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-    background: #ffffff21;
-    border-radius: 10px;
+  background: #ffffff21;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #1e4e6f;
+  background: #1e4e6f;
 }
 
 /* Desktop CSS */
 
 @media (min-width: 768px) {
-    .main-cont {
-        min-height: auto;
-    }
+  .main-cont {
+    min-height: auto;
+  }
 }
 
 /* Mobile CSS */
 
 @media (max-width: 768px) {
-    .course-title {
-        text-align: center;
-        font-size: 1.7em;
-        margin-top: 20px;
-    }
-    #sem-title {
-        text-align: center;
-    }
-    .notesBtn {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-    }
-    .course-second-cont {
-        margin: 0 auto;
-    }
-    .sub-drop {
-        text-align: center;
-    }
-    .row-cont {
-        margin-left: -10px;
-    }
+  .course-title {
+    text-align: center;
+    font-size: 1.7em;
+    margin-top: 20px;
+  }
+  #sem-title {
+    text-align: center;
+  }
+  .notesBtn {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+  .course-second-cont {
+    margin: 0 auto;
+  }
+  .sub-drop {
+    text-align: center;
+  }
+  .row-cont {
+    margin-left: -10px;
+  }
 }
 
 @media all and (min-width: 992px) {
-    .sub-drop .dropdown-menu {
-        display: none;
-    }
-    .sub-drop:hover {}
-    .sub-drop:hover .dropdown-menu {
-        display: block;
-    }
-    .sub-drop .dropdown-menu {
-        margin-top: -5px;
-    }
+  .sub-drop .dropdown-menu {
+    display: none;
+  }
+  .sub-drop:hover {
+  }
+  .sub-drop:hover .dropdown-menu {
+    display: block;
+  }
+  .sub-drop .dropdown-menu {
+    margin-top: -5px;
+  }
+}
+
+.subject-header {
+  margin-bottom: 2rem;
+}
+
+.subject-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.semester-tag,
+.code-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.subject-name {
+  color: var(--text-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.subject-name:hover {
+  color: var(--text-color-hover, #fff);
+}
+
+.subject-name::after {
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.subject-dropdown-menu {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: var(--background, #152f41);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  min-width: 300px;
+}
+
+.subject-dropdown-menu .dropdown-item {
+  color: var(--text-color, #fff);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  transition: background-color 0.3s ease;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.subject-dropdown-menu .dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.subject-dropdown-menu .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color, #fff);
+  text-decoration: none;
+}
+
+.notesBtn {
+  display: inline-block;
+  padding: 30px;
 }

@@ -10,12 +10,13 @@
       name="description"
     />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="./notes.html" />
+    <link rel="canonical" href="./sub.html" />
 
     <link href="images/favicon.ico" rel="icon" />
     <link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
@@ -37,7 +38,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="css/notes.css" />
+    <link rel="stylesheet" href="./css/sub.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/anim.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -55,6 +56,7 @@
       gtag("config", "UA-175250230-2");
     </script>
   </head>
+  <style></style>
 
   <body class="light">
     <nav class="navbar navbar-expand-lg navbar-dark my-md-4 my-sm-2 mr-md-5">
@@ -97,7 +99,6 @@
           <li class="nav-item">
             <a class="nav-link" href="./about.html">About Us</a>
           </li>
-
           <li class="nav-item d-lg-none">
             <a class="nav-link" onclick="changePageTheme()">Change Theme</a>
           </li>
@@ -115,49 +116,83 @@
     </nav>
     <div class="container-fluid main-cont">
       <div class="container-fluid ml-md-2">
-        <div class="row row-cont">
-          <div class="col-md-6 come-in" id="notes-cont">
-            <h1 class="course-title" id="courseName">
+        <div class="row" style="margin-left: -10px">
+          <div
+            class="col-md-6 come-in sub-img order-md-2"
+            style="max-height: 100px; align-items: center"
+          >
+          </div>
+          <div class="col-md-6 come-in ml-md-4" id="subjects-cont">
+            <h1 class="subject-title" id="CourseName">
               Computer Hardware Engineering
             </h1>
             <div class="course-info">
-              <div class="row">
-                <div class="dropdown sub-drop col-sm-12 col-md-auto">
-                  <a
-                    id="sub-title"
-                    class="dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                  </a>
+              <div class="dropdown sem-drop">
+                <a
+                  id="sem-title"
+                  class="dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Semester 1
+                </a>
 
-                  <div
-                    class="dropdown-menu sub-drop-menu"
-                    id="sub-drop-cont"
-                    aria-labelledby="sub-title"
+                <div
+                  class="dropdown-menu sem-drop-menu"
+                  id="cheSems"
+                  aria-labelledby="sem-title"
+                >
+                  <a class="dropdown-item" href="./sub.html?course=CHE&id=sem1"
+                    >Semester 1</a
                   >
-                  </div>
+                  <a class="dropdown-item" href="./sub.html?course=CHE&id=sem2"
+                    >Semester 2</a
+                  >
+                  <a class="dropdown-item" href="./sub.html?course=CHE&id=sem3"
+                    >Semester 3</a
+                  >
+                  <a class="dropdown-item" href="./sub.html?course=CHE&id=sem4"
+                    >Semester 4</a
+                  >
+                  <a class="dropdown-item" href="./sub.html?course=CHE&id=sem5"
+                    >Semester 5</a
+                  >
+                  <a class="dropdown-item" href="./sub.html?course=CHE&id=sem6"
+                    >Semester 6</a
+                  >
                 </div>
                 <div
-                  class="col-auto course-second-cont mt-4 mt-md-0"
-                  style="font-size: 1.3em"
+                  class="dropdown-menu sem-drop-menu"
+                  id="ceSems"
+                  aria-labelledby="sem-title"
                 >
-                  <h3 class="mr-3 d-none d-md-block">/</h3>
-                  <a id="sem-title" href="./semester.html?id=CHE"> </a>
-
-                  <h3 class="mx-3">/</h3>
-
-                  <h3 id="sub-code"> </h3>
+                  <a class="dropdown-item" href="./sub.html?course=CE&id=sem1"
+                    >Semester 1</a
+                  >
+                  <a class="dropdown-item" href="./sub.html?course=CE&id=sem2"
+                    >Semester 2</a
+                  >
+                  <a class="dropdown-item" href="./sub.html?course=CE&id=sem3"
+                    >Semester 3</a
+                  >
+                  <a class="dropdown-item" href="./sub.html?course=CE&id=sem4"
+                    >Semester 4</a
+                  >
+                  <!-- <a class="dropdown-item" href="./sub.html?course=MCA&id=sem5">Semester 5</a>
+                                <a class="dropdown-item" href="./sub.html?course=MCA&id=sem6">Semester 6</a> -->
                 </div>
               </div>
+              <!-- <h3 id="sem-title">
+                            Semester 2
+                        </h3> -->
+              <div style="display: flex" id="semSyllabus">
+                <h3 class="mx-3">/</h3>
+                <a id="sem-syllabus" target="_blank"> Syllabus </a>
+              </div>
             </div>
-          </div>
-          <div class="col-md-6 come-in mt-4 mt-md-0">
-            <h2 class="text-center font-weight-bold ml-md-5">Syllabus</h2>
-            <div id="course-sly"> </div>
           </div>
         </div>
       </div>
@@ -193,74 +228,23 @@
         ></a>
       </div>
     </div>
-    <div
-      class="modal fade"
-      id="notesModalCenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="notesModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title font-weight-bold" id="notesModalLongTitle"
-              >NOTES</h2
-            >
-            <button
-              type="button"
-              class="close text-white"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="notes-pop-body"> </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
-      class="toast"
-      data-delay="1500"
-      data-autohide="true"
-    >
-      <div class="d-flex px-2 pr-3 bg-danger">
-        <div class="toast-body" style="flex: 1; align-content: center">
-          Sorry! No Notes available right now..
-        </div>
-        <button
-          type="button"
-          class="ml-2 close text-white"
-          data-dismiss="toast"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    </div>
   </body>
-
   <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"
   ></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"
   ></script>
   <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"
   ></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="./js/main.js"></script>
-  <script src="./js/notes.js"></script>
+  <script src="./js/sub.js"></script>
 </html>
