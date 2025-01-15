@@ -163,11 +163,12 @@ function displaySubjectData(subjectData) {
   syllabusContainer.innerHTML = "";
 
   try {
+    // 
 
     if (subjectData.syllabus && subjectData.syllabus.length > 0) {
       syllabusContainer.innerHTML = subjectData.syllabus.map(item => `
         <div class="sly-cont">
-         <h3 class="sly-title ">${subjectData.subjectName}</h3>
+          
           <h2 class="sly-unit">Unit ${item.unit}</h2>
           <h4 class="sly-title">${item.title}</h4>
           <p class="sly-chap">${item.content}</p>
