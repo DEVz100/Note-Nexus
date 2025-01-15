@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Admin Dashboard</h1>
+        <button onclick="logout()" class="logout-btn">Logout</button>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Subject Form -->
+        <div class="card">
+          <h2 id="formTitle">Add New Subject</h2>
+          <form id="subjectForm">
+            <div class="form-group">
+              <label>Courses</label>
+              <!-- <input type="text" id="code" required /> -->
+              <select id="branch" required>
+                <option value="CHE">CHE</option>
+                <option value="BME">BME</option>
+                <option value="CE">CE</option>
+                <option value="EL">EL</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Semester</label>
+              <select id="semester" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Subject Name</label>
+              <select id="subjectName" required>
+                <!-- Options will be populated dynamically -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Subject Code</label>
+              <input type="text" id="subjectCode" required readonly />
+            </div>
+
+            <div class="form-group">
+              <label>Akash URL</label>
+              <input type="url" id="akashUrl" />
+            </div>
+
+            <div class="form-group">
+              <label>Book URL</label>
+              <input type="url" id="bookUrl" />
+            </div>
+
+            <div class="form-group">
+              <label>Paper Analysis URL</label>
+              <input type="url" id="paperAnalysisUrl" />
+            </div>
+
+           
+               <div class="form-section">
+              <h3>Syllabus</h3>
+              <div id="sylList" class="items-list"></div>
+              <div class="add-sly-group">
+                <input  type="text" id="sylUnit" placeholder="Unit" />
+                <input type="text" id="sylTitle" placeholder="Title" />
+                <textarea name="" id="sylContent" rows="5" cols="33"></textarea>
+                <button type="button" onclick="addSyllabus()">Add Syllabus</button>
+              </div>
+            </div>
+
+
+              
+        
+            
+
+            <!-- Notes Section -->
+            <div class="form-section">
+              <h3>Notes</h3>
+              <div id="notesList" class="items-list"></div>
+              <div class="add-item-group">
+                <input type="text" id="noteName" placeholder="Note name" />
+                <input type="url" id="noteUrl" placeholder="URL" />
+                <button type="button" onclick="addNote()">Add Note</button>
+              </div>
+            </div>
+
+           
+    
+
+            <!-- YouTube Section -->
+            <div class="form-section">
+              <h3>YouTube Videos</h3>
+              <div id="videosList" class="items-list"></div>
+              <div class="add-item-group">
+                <input type="text" id="videoName" placeholder="Video name" />
+                <input type="url" id="videoUrl" placeholder="URL" />
+                <button type="button" onclick="addVideo()">Add Video</button>
+              </div>
+            </div>
+
+              
+
+            <button type="submit" class="submit-btn">Add Subject</button>
+          </form>
+        </div>
+
+        <!-- Subjects List -->
+        <div class="card">
+          <h2>Subjects List</h2>
+          <div id="subjectsList" class="subjects-list"></div>
+        </div>
+      </div>
+      <!-- <div class="card"></div> -->
+ 
+</div>
+    </div>
+    <script src="script.js"></script>
+ 
+  </body>
+</html>
