@@ -25,7 +25,7 @@ var sem6 = [
 // Get subject ID from URL
 let params = new URL(document.location).searchParams;
 let sub_id = params.get("id");
-let isCE = sub_id?.includes("CE");
+let isCHE = sub_id?.includes("CHE");
 
 async function fetchSyllabusData() {
   try {
@@ -61,7 +61,7 @@ async function fetchSyllabusData() {
 // Fetch subject data from database
 async function fetchSubjectData() {
   try {
-    const branch = isCE ? "CE" : "CHE";
+    const branch = isCHE ? "CHE" : "CE";
     const semester = getSemesterFromSubId(sub_id);
     const encodedSubjectCode = encodeURIComponent(sub_id);
 
@@ -147,7 +147,7 @@ function displaySubjectData(subjectData) {
   console.log("Displaying subject data:", subjectData);
 
   const semester = getSemesterFromSubId(sub_id);
-  const branch = isCE ? "CE" : "CHE";
+  const branch = isCHE ? "CHE" : "CE";
 
   // Get predefined subjects for current branch and semester
   const semesterSubjects = subjectOptions[branch]?.[semester] || [];
