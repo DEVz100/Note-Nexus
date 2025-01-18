@@ -1,10 +1,24 @@
 body {
-  background-image: linear-gradient(to right, #578fa8, #152f41);
+  background-image: linear-gradient(to right, #3b95be, #105b90);
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease infinite;
   color: white;
   /* background-image: url("images/pattern_bg.svg"); */
   font-family: "Montserrat", sans-serif;
 }
 
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*                   Some of the above codes are for the background animation effect (gradiant)*/
 .course-title {
   font-weight: 600;
 }
@@ -46,7 +60,31 @@ body {
   padding: 30px;
   text-align: center;
   font-size: 1.6em;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
+  position: relative;          /*    the Below codes are for the shiny effect on the buttons    */
+  overflow: hidden;
+}
+
+.notesBtn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(60, 245, 9, 0.821),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: none;
+}                               /*    the Above codes are for the shiny effect on the buttons   */
+
+.notesBtn:hover::before {
+  transform: translateX(100%);
+  transition: transform 1.0s ease-in-out;
 }
 
 .notesBtn:last-child {
@@ -111,7 +149,7 @@ body {
 }
 
 .modal-content {
-  background-color: #0a7ac2;
+  background-color: #aac7da;
   border: none;
   padding: 30px;
   padding-bottom: 30px;
@@ -155,12 +193,44 @@ body {
   max-height: 300px;
   overflow-y: auto;
 }
-
+/*        Below is the   Shiny EFFECt on the contents of the syllabus                  */
 .sly-unit {
   text-transform: capitalize;
   font-size: 1em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.5s ease;
 }
 
+.sly-unit:hover,
+.sly-unit:active {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.sly-unit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(21, 240, 35, 0.699),
+    transparent
+  );
+  transition: 1.0s;
+}
+
+.sly-unit:hover::before,
+.sly-unit:active::before {
+  left: 100%;
+}
+/*                             Above  is the Shiny EFFECt on the contents of the syllabus                  */
 .sly-title {
   font-weight: 600;
 }
@@ -338,7 +408,7 @@ body {
 }
 
 .subject-dropdown-menu .dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(225, 18, 18, 0.81);                   /*    dropdown selection color    */
   color: var(--text-color, #fff);
   text-decoration: none;
 }
@@ -347,3 +417,114 @@ body {
   display: inline-block;
   padding: 30px;
 }
+
+/*                 Newly Added                         */
+.modal-content {
+  background-color: #2e2a2a;
+  color: white;
+}
+
+.modal-header {
+  border-bottom: 1px solid #ffffff;
+}
+
+.modal-header .close {
+  color: white;
+}
+
+.theme-grid {
+  background-color: #231f1f9f;
+  padding: 15px;
+}
+
+.theme-option {
+  background-color: #3a3a3a;
+  border: 1px solid #404040;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.theme-option:hover {
+  background-color: #4a4a4a;
+  transform: scale(1.05);
+}
+
+/*                        Social Icons Hovering effect                */
+@keyframes socialIconDrop {
+  0% {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.social-parent .social-icon {
+  animation: socialIconDrop 1.0s ease forwards;
+  opacity: 0;
+}
+
+.social-parent .social-icon:nth-child(1) {
+  animation-delay: 1.0s;
+}
+
+.social-parent .social-icon:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.social-parent .social-icon:nth-child(3) {
+  animation-delay: 2.0s;
+}
+
+.social-parent .social-icon:nth-child(4) {
+  animation-delay: 2.5s;
+}
+
+/*                        Liquid Motion Effect for Syllabus Heading                */
+.syllabus-heading {
+  position: relative;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.syllabus-heading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(21, 247, 255, 0.771) 50%,
+    transparent 100%
+  );
+  animation: liquidWave 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes liquidWave {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+

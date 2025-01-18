@@ -12,6 +12,6 @@ else{
     document.getElementById("elSems").style.display="none";
 }
 
-function zoomsite() {
-    window.open("https://zoomquilt.org/");
-}
+// function zoomsite() {
+//     window.open("https://zoomquilt.org/");
+// }

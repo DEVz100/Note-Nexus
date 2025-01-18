@@ -1,60 +1,77 @@
-var sem1 = [
-  "BME 101",
-  "BME 103",
-  "BME 105",
-  "BME 107",
-  "BME 109",
-  "CHE1 101",
-  "CHE1 102",
-  "CHE1 103",
-  "CHE1 104",
-  "CHE1 105",
+var sem1 = ["BME 101", "BME 102", "BME 103", "BME 104", "BME 105", "BME 106", "BME 107", "BME 108", "BME 109", "BME 110"];
+var subName = [
+  "Communication Skills in English",
+  "Mathematics - I",
+  "Applied Physics",
+  "Applied Chemistry",
+  "Engineering Graphics",
+  "Applied Physics Lab",
+  "Applied Chemistry Lab",
+  "Introduction to IT Systems Lab",
+  "Engineering Workshop Lab",
+  "Sports and Yoga"
 ];
-var sem2 = [
-  "BME 102",
-  "BME 104",
-  "BME 106",
-  "BME 108",
-  "BME 110",
-  "CHE1 201",
-  "CHE1 202",
-  "CHE1 203",
-  "CHE1 204",
-  "CHE2 201",
+var sem2 = ["BME 201", "BME 202", "BME 203", "BME 204", "BME 205", "BME 206", "BME 207", "BME 208", "BME 209", "BME 210"];
+var subName2 = [
+  "Mathematics - II",
+  "Applied Phyics - II",
+  "Environment Science",
+  "Fundamentals of Electrical & Electronics Engineering",
+  "Basic Electronics",
+  "Communication Skills in English Lab",
+  "Applied Physics Lab",
+  "Fundamentals of Electrical & Electronics Engineering Lab",
+  "Electronics Tinkering Workshop",
+  "Engineering Workshop Practice"
 ];
-var sem3 = [
-  "BME 201",
-  "BME 203",
-  "BME 205",
-  "BME 207",
-  "BME 209",
-  "CHE1 301",
-  "CHE1 302",
-  "CHE2 302",
-  "CHE2 303",
-  "CHE2 309",
+var sem3 = ["BME 301", "BME 302", "BME 303", "BME 304", "BME 305", "BME 306", "BME 307", "BME 308", "BME 309"];
+var subName3 = [
+  "Basic Medical Sciences",
+  "Medical Instrumentation",
+	"Electronic Circuits",
+	"Digital Electronics",
+	"Electronic Measurements and Instrumentation",
+	"PCB and Prototyping Workshop",
+	"Electronic Circuits Lab",
+	"Digital Electronics Lab",
+  "Servicing Fundamentals Lab"
 ];
-var sem4 = ["BME 202", "BME 204", "BME 206", "BME 208", "BME 210", "CHE1 401"];
-var sem5 = [
-  "BME 301",
-  "BME 303",
-  "BME 305",
-  "BME 307",
-  "BME 309",
-  "BME 311",
-  "BME 313",
-  "BME 315",
+var sem4 = ["BME 401", "BME 402", "BME 403", "BME 404", "BME 405", "BME 406", "BME 407", "BME 408", "BME 409"];
+var subName4 = [
+  "Linear Integrated Circuits",
+  "Microcontroller and Applications",
+	"Therapeutic Equipment",
+	"Community Skills in Indian knowledge system",
+	"Electric Circuits & Networks",
+	"Linear Integrated Circuits Lab",
+	"Microcontroller and Applications Lab",
+	"Medical Electronics Lab 1",
+  "Minor Project"
 ];
-var sem6 = [
-  "BME 302",
-  "BME 304",
-  "BME 306",
-  "BME 308",
-  "BME 310",
-  "BME 312",
-  "BME 314",
-  "BME 316",
+var sem5 = ["BME 501", "BME 502", "BME 503", "BME 504", "BME 505", "BME 506", "BME 507", "BME 508", "BME 509"];
+var subName5 = [
+  "Industrial Management and Safety",
+  "Medical Imaging Techniques",
+	"Hospital Systems",
+	"Embedded Systems/	Analytical Instruments/ Programming in C",
+	"Medical Electronics Lab II",
+	"Biomedical Instrumentation Lab I",
+	"Embedded Systems Lab/ Programming in C Lab",
+	"Seminar",
+  "Major Project"
 ];
+var sem6 = ["BME 601", "BME 602", "BME 603", "BME 604", "BME 605", "BME 606", "BME 607", "BME 608"];
+var subName6 = [
+  "Entrepreneurship and Startup",
+  "Introduction to 5G/ Advanced Medical Instrumentation and Prosthetics/	Signals and Systems/ Bio MEMS",
+	"Healthcare Informatics/ Rehabilitation Engineering/ Biomedical Instrumentation/ IoT in Healthcare",
+	"Indian Constitution",
+	"Biomedical Instrumentation Lab II	",
+	"Computer Hardware and Data Communication Lab",
+	"Simulation Lab with Numerical software/ Biomedical Equipment Servicing and Maintenance Lab",
+	"Major Project"
+];
+
 var selectedSem = [];
 
 let params = new URL(document.location).searchParams;
@@ -139,17 +156,74 @@ switch (sem_id) {
 }
 
 var notesData = {};
-if (course_id == "BME") {
-  $.getJSON("./assets/nom3.json", function (data) {
-    notesData = data.BME;
-    selectedSem.forEach(function (sub) {
-      document.getElementById(
-        "subjects-cont"
-      ).innerHTML += ` <a class="subject" href='./notes3.html?id=${sub}'>
-                ${notesData[sub].SubjectName}
+if (course_id == "BME" && sem_id == "sem1") {
+  sem1.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes3.html?id=${sub}'>
+                ${subName[index]}
                 </a>`;
-      console.log(`${sub}`);
-    });
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "BME" && sem_id == "sem2") {
+  sem2.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes3.html?id=${sub}'>
+                ${subName2[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "BME" && sem_id == "sem3") {
+  sem3.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes3.html?id=${sub}'>
+                ${subName3[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "BME" && sem_id == "sem4") {
+  sem4.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes3.html?id=${sub}'>
+                ${subName4[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "BME" && sem_id == "sem5") {
+  sem5.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes3.html?id=${sub}'>
+                ${subName5[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "BME" && sem_id == "sem6") {
+  sem6.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes3.html?id=${sub}'>
+                ${subName6[index]}
+                </a>`;
+    console.log(`${sub}`);
   });
 }
 console.log(notesData);

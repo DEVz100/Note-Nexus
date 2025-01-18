@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/anim.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-175250230-2"
     ></script>
@@ -54,9 +54,53 @@
       gtag("js", new Date());
 
       gtag("config", "UA-175250230-2");
-    </script>
+    </script> -->
   </head>
-  <style></style>
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-flow: column nowrap;
+    }
+  
+    /* Add these new styles */
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+  
+    .social-icon:hover {
+      filter: drop-shadow(0 0 8px rgb(255, 255, 255));
+      transform: scale(1.1);
+    }
+  
+    .social-icon:hover i,
+    .social-icon:hover img {
+      filter: brightness(1.2);
+    }
+
+    /*              Underline EFFECT           */
+    .subject-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .subject-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 3px;
+      background: #01ff06;
+      box-shadow: 0 0 10px #68ff10;
+      transition: width 0.8s ease;
+    }
+
+    .subject-title:hover::after {
+      width: 100%;
+    }
+  </style>
+  <!-- <style></style> -->
 
   <body class="light">
     <nav class="navbar navbar-expand-lg navbar-dark my-md-4 my-sm-2 mr-md-5">
@@ -99,18 +143,17 @@
           <li class="nav-item">
             <a class="nav-link" href="./about.html">About Us</a>
           </li>
-          <li class="nav-item d-lg-none">
-            <a class="nav-link" onclick="changePageTheme()">Change Theme</a>
-          </li>
+          <!-- Replace the mobile theme button -->
+        <li class="nav-item d-lg-none">
+          <a class="nav-link" data-toggle="modal" data-target="#themeModal">
+            Change Theme
+          </a>
+        </li>
 
-          <a
-            class="btn-theme d-none d-lg-inline-flex"
-            onclick="changePageTheme()"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="Change theme"
-            ><i class="bi bi-moon theme-icon"></i
-          ></a>
+        <!-- Replace the desktop theme button -->
+        <a class="btn-theme d-none d-lg-inline-flex" data-toggle="modal" data-target="#themeModal">
+          <i class="bi bi-palette"></i>
+        </a>
         </ul>
       </div>
     </nav>
@@ -201,7 +244,7 @@
           target="_blank"
         >
           <img
-            src="./images/x_30.png"
+            src="./images/icon.png"
             alt="Xbotics7"
             height="26px"
             class="mr-3 mb-md-3"
@@ -226,6 +269,65 @@
         ></a>
       </div>
     </div>
+
+    <div class="modal fade" id="themeModal" tabindex="-1" aria-labelledby="themeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="themeModalLabel">Select Theme</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="theme-grid">
+              <button class="theme-option" data-theme="light">
+                <div class="theme-preview light-preview"></div>
+                <span>Light</span>
+              </button>
+              <button class="theme-option" data-theme="dark">
+                <div class="theme-preview dark-preview"></div>
+                <span>Dark</span>
+              </button>
+              <button class="theme-option" data-theme="orange">
+                <div class="theme-preview orange-preview"></div>
+                <span>Orange</span>
+              </button>
+              <button class="theme-option" data-theme="purple">
+                <div class="theme-preview purple-preview"></div>
+                <span>Purple</span>
+              </button>
+              <button class="theme-option" data-theme="red">
+                <div class="theme-preview red-preview"></div>
+                <span>Red</span>
+              </button>
+              <button class="theme-option" data-theme="green">
+                <div class="theme-preview green-preview"></div>
+                <span>Green</span>
+              </button>
+              <button class="theme-option" data-theme="yellow">
+                <div class="theme-preview yellow-preview"></div>
+                <span>Yellow</span>
+              </button>
+              <button class="theme-option" data-theme="violet">
+                <div class="theme-preview violet-preview"></div>
+                <span>Violet</span>
+              </button>
+              <button class="theme-option" data-theme="greeny">
+                <div class="theme-preview greeny-preview"></div>
+                <span>Greeny</span>
+              </button>
+              <button class="theme-option" data-theme="white">
+                <div class="theme-preview white-preview"></div>
+                <span>White</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
   </body>
   <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

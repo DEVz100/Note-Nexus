@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <title>Note Nexus</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Tech" name="keywords" />
+    <meta content="Note Nexus - Get High quality Notes, Akash, Question Paper and videos for CHE/CE/EL/BME course" name="description"/>
+    <meta name="robots" content="index, follow" />
+    <!-- <link rel="canonical" href="./about.html" /> -->
+    <link rel="canonical" href="https://xbotics7.github.io/Nomtes/" />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <title>Note Nexus</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="Tech" name="keywords" />
-  <meta content="Note Nexus - Get High quality Notes, Akash, Question Paper and videos for CHE/CE/EL/BME course" name="description" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://xbotics7.github.io/Nomtes/" />
+    <link href="images/favicon.ico" rel="icon" />
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <link href="images/favicon.ico" rel="icon">
-  <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
 
-  <!--google font-->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css" />     
+    <link rel="stylesheet" href="./css/anim.css" />
+  
+    <!-- icon library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/anim.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-175250230-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  <!-- icon library -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175250230-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-175250230-2');
-  </script> -->
-
-</head>
-<style>
+      gtag("config", "UA-175250230-2");
+    </script> -->
+  </head>
+  <!-- <style>
     body {
       min-height: 100vh;
       display: flex;
       flex-flow: column nowrap;
     }
-  
     /* Add these new styles */
     .social-icon {
       transition: all 0.3s ease;
@@ -61,9 +64,8 @@
     .social-icon:hover img {
       filter: brightness(1.2);
     }
-  </style>
-
-  <!-- ... For the library for study materials(Glow effect) ... -->
+  </style> -->
+   <!-- ... For the library for study materials(Glow effect) ... -->
 <style>
   body {
     min-height: 100vh;
@@ -81,115 +83,129 @@
                  0 0 25px rgba(255, 255, 255, 0.7),
                  0 0 35px rgba(255, 255, 255, 0.5);
   }
-
 </style>  
 
-<!-- Below code is to change the theme selection page's BG -->
+<!-- Below code is to change the theme grid selection page's Background -->
 <style>
-    .modal-content {
-        background-color: #2e2a2a;  /* Dark background */
-        color: white;  /* Light text */
-    }
+  .modal-content {
+      background-color: #2e2a2a;  /* Dark background */
+      color: white;  /* Light text */
+  }
 
-    .modal-header {
-        border-bottom: 1px solid #ffffff;  /* Darker border */
-    }
+  .modal-header {
+      border-bottom: 1px solid #ffffff;  /* Darker border */
+  }
 
-    .modal-header .close {
-        color: white;  /* Make close button white */
-    }
+  .modal-header .close {
+      color: white;  /* Make close button white */
+  }
 
-    .theme-grid {
-        background-color: #231f1f9f;  /* Match modal background */
-        padding: 15px;
-    }
+  .theme-grid {
+      background-color: #231f1f9f;  /* Match modal background */
+      padding: 15px;
+  }
 
-    /* Optional: Style the theme options better */
-    .theme-option {
-        background-color: #3a3a3a;  /* Slightly lighter than modal */
-        border: 1px solid #404040;
-        color: white;
-        margin: 5px;
-        padding: 10px;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-    }
+  /* Optional: Style the theme options better */
+  .theme-option {
+      background-color: #3a3a3a;  /* Slightly lighter than modal */
+      border: 1px solid #404040;
+      color: white;
+      margin: 5px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+  }
 
-    .theme-option:hover {
-        background-color: #4a4a4a;  /* When selecting an icon */
-        transform: scale(1.05);
-    }
+  .theme-option:hover {
+      background-color: #4a4a4a;  /* When selecting an icon */
+      transform: scale(1.05);
+  }
 </style>
 <!-- Above code is to change the theme selection page's BG -->
 
-<style>
-    /*           Style for dropdown menu                      */
-    .dropdown-menu {
-        background-color: #2a2a2a;
-        border: 1px solid #404040;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
+<!-- <style>
+  /*           Style for dropdown menu                      */
+  .dropdown-menu {
+      background-color: #2a2a2a;
+      border: 1px solid #404040;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
 
-    .dropdown-item {
-        color: white;
-        transition: all 0.3s ease;
-        padding: 6px 25px;
-    }
+  .dropdown-item {
+      color: white;
+      transition: all 0.3s ease;
+      padding: 6px 25px;
+  }
 
-    .dropdown-item:hover {
-        background-color: #3a3a3a;
-        color: #fff;
-        transform: translateX(5px);
-    }
+  .dropdown-item:hover {
+      background-color: #3a3a3a;
+      color: #fff;
+      transform: translateX(5px);
+  }
 
-    /* Add separator between items */
-    .dropdown-item:not(:last-child) {
-        border-bottom: 1px solid #404040;
-    }
+  /* Add separator between items */
+  .dropdown-item:not(:last-child) {
+      border-bottom: 1px solid #404040;
+  }
 
-    /* Optional: Add arrow indicator */
-    .dropdown-toggle::after {
-        transition: transform 0.3s ease;
-    }
+  /* Optional: Add arrow indicator */
+  .dropdown-toggle::after {
+      transition: transform 0.3s ease;
+  }
 
-    .dropdown.show .dropdown-toggle::after {
-        transform: rotate(180deg);
-    }
-</style>
+  .dropdown.show .dropdown-toggle::after {
+      transform: rotate(180deg);
+  }
+</style> -->
 
-<body class="light">
-  <nav class="navbar navbar-expand-lg navbar-dark py-md-4 py-sm-2 mr-md-5">
-    <a class="navbar-brand" href="./">Note Nexus</a>
+  <body class="light">
+    <nav class="navbar navbar-expand-lg navbar-dark py-md-4 py-sm-2 mr-md-5">
+      <a class="navbar-brand" href="./">Note Nexus</a>
 
-    <button class="navbar-toggler ml-auto mb-2" style="border:none;" type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button
+        class="navbar-toggler ml-auto mb-2" style="border: none" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto mt-2 mt-md-0 text-center">
-        <li class="nav-item text-center">
-          <a class="nav-link" href="./">Home</a>
-        </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-md-0 text-center">
+          <li class="nav-item"></li>
+            <a class="nav-link" href="./admin/admin.html" >Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="logout()">Logout</a>
+          </li>
+          <script>
+            function logout() {
+              localStorage.removeItem("token");
+              localStorage.removeItem("user");
+              window.location.href = "/login";
+            }
+          </script>
 
-        <li class="nav-item dropdown active ">
-          <a class="nav-link dropdown-toggle" href="./course.html" role="button">
-            Courses<span class="sr-only">(current)</span>
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="./semester.html">CHE</a>
-            <a class="dropdown-item" href="./semester1.html">CE</a>
-            <a class="dropdown-item" href="./semester2.html" >EL</a>
-            <a class="dropdown-item" href="./semester3.html" >BME</a>
-          </div>
-        </li>
+          <li class="nav-item text-center">
+            <a class="nav-link" href="/">Home</a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="./about.html">About Us</a>
-        </li>
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="./course.html" role="button">
+              Courses<span class="sr-only">(current)</span>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="./semester.html">CHE</a>
+              <a class="dropdown-item" href="./semester1.html">CE</a>
+              <a class="dropdown-item" href="./semester2.html" >EL</a>
+              <a class="dropdown-item" href="./semester3.html" >BME</a>
+            </div>
+          </li>
 
-        <!-- Replace the mobile theme button -->
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About Us</a>
+          </li>
+
+          <!-- Replace the mobile theme button -->
         <li class="nav-item d-lg-none">
           <a class="nav-link" data-toggle="modal" data-target="#themeModal">
             Change Theme
@@ -200,50 +216,44 @@
         <a class="btn-theme d-none d-lg-inline-flex" data-toggle="modal" data-target="#themeModal">
           <i class="bi bi-palette"></i>
         </a>
-        <!-- <li class="nav-item d-lg-none">
-          <a class="nav-link" onclick="changePageTheme()">Change Theme</a>
-          
-        </li>
 
-        <a class="btn-theme d-none d-lg-inline-flex" onclick="changePageTheme()" data-toggle="tooltip"
-          data-placement="bottom" title="Change theme"><i class="bi bi-moon theme-icon"></i></a> -->
-          
-      </ul>
+          <!-- <li class="nav-item d-lg-none">
+            <a class="nav-link" onclick="changePageTheme()">Change Theme</a>
+          </li>
 
-    </div>
-  </nav>
-
-  <section class="main_section slide-in-top">
-    <div class="container-fluid main">
-      <div class="row" style="margin: 0">
-        <div class="col-md-6 bg-col order-md-2 come-in2"></div>
-        <div class="col-md-6 come-in2 d-flex align-items-center flex-column my-auto">
-            <img src="images/nomtes_250.png" alt="Nomtes" class="nomtes_icon slide-in-top" style="animation-delay: 0.2s;">
-            <div id="nomtes" class="slide-in-top" style="animation-delay: 0.4s; text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.508);">NOTE NEXUS</div>
-            <div id="innertext" class="slide-in-top" style="animation-delay: 0.6s;">Library For Study Materials</div>
-            <button class="btn mt-4 slide-in-top" style="animation-delay: 0.8s;" onclick="location.href='course.html';">
-              <i class="fa fa-book pr-2" aria-hidden="true"></i> Courses
-            </button>
-          </div>
-
-        <!-- <div class="col-md-6 come-in2 d-flex align-items-center flex-column my-auto">
-          <img src="images/nomtes_250.png" alt="Nomtes" class="nomtes_icon">
-          <div id="nomtes">NOTE NEXUS</div>
-          <div id="innertext">Library For Study Materials</div>
-          <button class="btn mt-4" onclick="location.href='course.html';">
-            <i class="fa fa-book pr-2" aria-hidden="true"></i> Courses
-          </button>
-        </div> -->
+          <a
+            class="btn-theme d-none d-lg-inline-flex"
+            onclick="changePageTheme()"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="Change theme"
+            ><i class="bi bi-moon theme-icon"></i
+          ></a> -->
+        </ul>
       </div>
-    </div>
+    </nav>
 
-    <!-- <div class="d-flex come-in2 justify-content-center align-self-center mt-md-5 pos">
+    <section class="main_section slide-in-top">
+      <div class="container-fluid main">
+        <div class="row" style="margin: 0">
+          <div class="col-md-6 bg-col order-md-2 come-in2"></div>
+          <div class="col-md-6 come-in2 d-flex align-items-center flex-column my-auto">
+              <img src="images/nomtes_250.png" alt="Nomtes" class="nomtes_icon slide-in-top" style="animation-delay: 0.2s;">
+              <div id="nomtes" class="slide-in-top" style="animation-delay: 0.4s; text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.508);">NOTE NEXUS</div>
+              <div id="innertext" class="slide-in-top" style="animation-delay: 0.6s;">Library For Study Materials</div>
+              <button class="btn mt-4 slide-in-top" style="animation-delay: 0.8s;" onclick="location.href='course.html';">
+                <i class="fa fa-book pr-2" aria-hidden="true"></i> Courses
+              </button>
+            </div>
+        </div>
+      </div>
+
+      <!-- <div class="d-flex come-in2 justify-content-center align-self-center mt-md-5 pos">
       <a class="btnAndroid my-4 text-center" href="https://xbotics7.github.io/NomtesApp/" target="_blank">
         <i class="fa fa-android pr-2"></i> Android App
       </a>
     </div> -->
-
-    <div class="social-parent come-in2">
+      <div class="social-parent come-in2">
         <a class="social-icon slide-in-top" style="animation-delay: 1.0s;" href="https://github.com/DEVz100" target="_blank">
           <img src="./images/icon.png" alt="Xbotics7" height="26px" class="mr-3 mb-md-3">
         </a>
@@ -316,6 +326,7 @@
     </div>
   </div>
 
+  
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
   integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -326,4 +337,24 @@
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
 
+
+
+  <script>
+    // Check if user is logged in
+    window.addEventListener('DOMContentLoaded', () => {
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user'));
+        
+        if (!token) {
+            window.location.href = '/login';
+            return;
+        }
+
+        // Hide admin elements if user is not admin
+        if (user.role !== 'admin') {
+            const adminElements = document.querySelectorAll('.admin-only');
+            adminElements.forEach(el => el.style.display = 'none');
+        }
+    });
+  </script>
 </html>
