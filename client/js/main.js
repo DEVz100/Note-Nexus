@@ -1,66 +1,67 @@
-var currentTheme = "";
-$(document).ready(function () {
-  getPageTheme();
-  setPageTheme(currentTheme);
+// Theme Management
+function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.body.className = themeName;
+}
+
+function applyTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.className = savedTheme;
+    
+    // Update active state in theme modal
+    const themeButtons = document.querySelectorAll('.theme-option');
+    themeButtons.forEach(button => {
+        if (button.getAttribute('data-theme') === savedTheme) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+// Initialize theme when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    applyTheme();
+    
+    // Add click handlers for theme buttons
+    const themeButtons = document.querySelectorAll('.theme-option');
+    themeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const theme = button.getAttribute('data-theme');
+            setTheme(theme);
+            
+            // Close modal after selection (optional)
+            const modal = document.getElementById('themeModal');
+            const bootstrapModal = bootstrap.Modal.getInstance(modal);
+            if (bootstrapModal) {
+                bootstrapModal.hide();
+            }
+        });
+    });
 });
 
-function getPageTheme() {
-  if (localStorage.getItem("theme") !== null) {
-    currentTheme = localStorage.getItem("theme");
-  } else {
-    localStorage.setItem("theme", "light");
-    currentTheme = "light";
-  }
+// Optional: Add theme-specific CSS variables
+const themeColors = {
+    light: {
+        background: '#ffffff',
+        text: '#212529',
+        primary: '#007bff'
+    },
+    dark: {
+        background: '#343a40',
+        text: '#ffffff',
+        primary: '#007bff'
+    },
+    // Add other theme colors as needed
+};
+
+function applyThemeColors(theme) {
+    const colors = themeColors[theme];
+    if (colors) {
+        const root = document.documentElement;
+        Object.entries(colors).forEach(([key, value]) => {
+            root.style.setProperty(`--${key}`, value);
+        });
+    }
 }
 
-function setPageTheme(theme) {
-  if (theme === "light") {
-    $(".theme-icon").removeClass("bi-sun").addClass("bi-moon");
-  } else if (theme === "dark") {
-    $(".theme-icon").removeClass("bi-moon").addClass("bi-sunrise");
-  } else if (theme === "orange") {
-    $(".theme-icon").removeClass("bi-sunrise").addClass("bi-cloud-sun");
-  } else if (theme === "purple") {
-    $(".theme-icon")
-      .removeClass("bi-cloud-sun")
-      .addClass("bi-brightness-alt-low");
-  } else if (theme === "red") {
-    $(".theme-icon")
-      .removeClass("bi-brightness-alt-low")
-      .addClass("bi-moon-stars");
-  } else {
-    $(".theme-icon").removeClass("bi-moon-stars").addClass("bi-sun");
-  }
-
-  $("body").removeClass().addClass(currentTheme);
-}
-
-function changePageTheme() {
-  if (currentTheme === "light") {
-    currentTheme = "dark";
-  } else if (currentTheme === "dark") {
-    currentTheme = "orange";
-  } else if (currentTheme === "orange") {
-    currentTheme = "purple";
-  } else if (currentTheme === "purple") {
-    currentTheme = "red";
-  } else if (currentTheme === "red") {
-    currentTheme = "green";
-  } else {
-    currentTheme = "light";
-  }
-  localStorage.setItem("theme", currentTheme);
-  setPageTheme(currentTheme);
-}
-
-// Check authentication
-function checkAuth() {
-  const token = localStorage.getItem("token");
-  if (!token) {
-    window.location.href = "/login.html";
-    return;
-  }
-}
-
-// Call this on page load
-checkAuth();

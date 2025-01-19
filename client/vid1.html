@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+  
     <meta charset="utf-8" />
     <title>Note Nexus - Best Notes, PYQs, for students</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -15,11 +15,11 @@
     <link href="images/favicon.ico" rel="icon">
     <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!--google font-->
+ 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
 
@@ -27,21 +27,34 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/anim.css">
 
-    <!-- icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.min.css">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175250230-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-175250230-2');
-    </script>
-
+    
 </head>
+
+<style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-flow: column nowrap;
+    }
+  
+   
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+  
+    .social-icon:hover {
+      filter: drop-shadow(0 0 8px rgb(255, 255, 255));
+      transform: scale(1.1);
+    }
+  
+    .social-icon:hover i,
+    .social-icon:hover img {
+      filter: brightness(1.2);
+    }
+  </style>
 
 <body class="light">
 

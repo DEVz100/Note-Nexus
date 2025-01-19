@@ -1,60 +1,77 @@
-var sem1 = [
-  "EL 101",
-  "EL 103",
-  "EL 105",
-  "EL 107",
-  "EL 109",
-  "BME1 101",
-  "BME1 102",
-  "BME1 103",
-  "BME1 104",
-  "BME1 105",
+var sem1 = ["EL 101", "EL 102", "EL 103", "EL 104", "EL 105", "EL 106", "EL 107", "EL 108", "EL 109", "EL 110"];
+var subName = [
+  "Communication Skills in English",
+  "Mathematics - I",
+  "Applied Physics",
+  "Applied Chemistry",
+  "Engineering Graphics",
+  "Applied Physics Lab",
+  "Applied Chemistry Lab",
+  "Introduction to IT Systems Lab",
+  "Engineering Workshop Lab",
+  "Sports and Yoga"
 ];
-var sem2 = [
-  "EL 102",
-  "EL 104",
-  "EL 106",
-  "EL 108",
-  "EL 110",
-  "BME1 201",
-  "BME1 202",
-  "BME1 203",
-  "BME1 204",
-  "BME2 201",
+var sem2 = ["EL 201", "EL 202", "EL 203", "EL 204", "EL 205", "EL 206", "EL 207", "EL 208", "EL 209", "EL 210"];
+var subName2 = [
+  "Mathematics - II",
+  "Applied Phyics - II",
+  "Environment Science",
+  "Fundamentals of Electrical & Electronics Engineering",
+  "Elementary Concepts of Electrical Systems",
+  "Communication Skills in English Lab",
+  "Applied Physics Lab",
+  "Fundamentals of Electrical & Electronics Engineering Lab",
+  "Engineering Graphics using CAD software",
+  "Engineering Workshop Practice"
 ];
-var sem3 = [
-  "EL 201",
-  "EL 203",
-  "EL 205",
-  "EL 207",
-  "EL 209",
-  "BME1 301",
-  "BME1 302",
-  "BME2 302",
-  "BME2 303",
-  "BME2 309",
+var sem3 = ["EL 301", "EL 302", "EL 303", "EL 304", "EL 305", "EL 306", "EL 307", "EL 308", "EL 309"];
+var subName3 = [
+  "Analog & Digital Circuits",
+  "DC Machines & Traction Motors",
+	"Fundamentals of Electric Circuits",
+	"Electrical & Electronics Measuring Instruments",
+	"Mechanical Engineering",
+	"DC Machines Lab",
+	"Electrical Measurements Lab",
+	"Electrical Workshop Practice",
+  "	Mechanical Engineering Lab"
 ];
-var sem4 = ["EL 202", "EL 204", "EL 206", "EL 208", "EL 210", "BME1 401"];
-var sem5 = [
-  "EL 301",
-  "EL 303",
-  "EL 305",
-  "EL 307",
-  "EL 309",
-  "EL 311",
-  "EL 313",
-  "EL 315",
+var sem4 = ["EL 401", "EL 402", "EL 403", "EL 404", "EL 405", "EL 406", "EL 407", "EL 408", "EL 409"];
+var subName4 = [
+  "Power Electronics Devices and Circuits",
+  "Electrical Installation Design & Estimation",
+	"Induction Machines",
+	"Community Skills in Indian knowledge system",
+	"Electronics Lab",
+	"Induction Machines Lab",
+	"Domestic Appliances Repair & Maintenance Workshop",
+	"Professional Practice Lab",
+  "Minor Project"
 ];
-var sem6 = [
-  "EL 302",
-  "EL 304",
-  "EL 306",
-  "EL 308",
-  "EL 310",
-  "EL 312",
-  "EL 314",
-  "EL 316",
+var sem5 = ["EL 501", "EL 502", "EL 503", "EL 504", "EL 505", "EL 506", "EL 507", "EL 508", "EL 509"];
+var subName5 = [
+  "Industrial Management and Safety",
+  "Synchronous Machines & FHP Motors",
+	"Electricity Generation, Transmission & Distribution",
+	"Renewable Energy Power Plant/ Industrial Drives & Control/ Switch Gear & Protection",
+	"Synchronous Machines Lab",
+	"Industrial Electrical Engineering Lab",
+	"Electrical Estimation Lab/ Applied Electronics Lab/ Solar Energy Technology Lab",
+	"Seminar",
+  "Major Project"
 ];
+var sem6 = ["EL 601", "EL 602", "EL 603", "EL 604", "EL 605", "EL 606", "EL 607", "EL 608"];
+var subName6 = [
+  "Entrepreneurship and Startup",
+  "Energy Conservation & Audit (EE)/	Microcontroller & PLC/	Electric Vehicles",
+	"Solar Power Technologies/Energy Conservation & Management/	Electrification of Residential Buildings/ Electric Vehicles & Traction",
+	"Indian Constitution",
+	"Electrical Computer Aided Drafting Lab",
+	"Industrial Automation Lab",
+	"Applied Electrical Testing Lab/ Modelling and simulation Lab/ Advanced Solar Photovoltaic Lab",
+	"Major Project"
+];
+
 var selectedSem = [];
 
 let params = new URL(document.location).searchParams;
@@ -137,17 +154,74 @@ switch (sem_id) {
 }
 
 var notesData = {};
-if (course_id == "EL") {
-  $.getJSON("./assets/nom2.json", function (data) {
-    notesData = data.EL;
-    selectedSem.forEach(function (sub) {
-      document.getElementById(
-        "subjects-cont"
-      ).innerHTML += ` <a class="subject" href='./notes2.html?id=${sub}'>
-                ${notesData[sub].SubjectName}
+if (course_id == "EL" && sem_id == "sem1") {
+  sem1.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes2.html?id=${sub}'>
+                ${subName[index]}
                 </a>`;
-      console.log(`${sub}`);
-    });
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "EL" && sem_id == "sem2") {
+  sem2.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes2.html?id=${sub}'>
+                ${subName2[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "EL" && sem_id == "sem3") {
+  sem3.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes2.html?id=${sub}'>
+                ${subName3[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "EL" && sem_id == "sem4") {
+  sem4.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes2.html?id=${sub}'>
+                ${subName4[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "EL" && sem_id == "sem5") {
+  sem5.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes2.html?id=${sub}'>
+                ${subName5[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "EL" && sem_id == "sem6") {
+  sem6.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes2.html?id=${sub}'>
+                ${subName6[index]}
+                </a>`;
+    console.log(`${sub}`);
   });
 }
 console.log(notesData);

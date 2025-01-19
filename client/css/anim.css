@@ -1,14 +1,30 @@
-.come-in2 {
-    transform: translateY(50px);
-    animation: come-in2 0.9s ease forwards;
+.come-in {
+    transform: translateX(-1000px);
+    animation: come-in 0.8s ease forwards;
 }
 
-.come-in2:nth-child(odd) {
+.come-in:nth-child(odd) {
     animation-duration: 0.7s;
 }
 
-@keyframes come-in2 {
+@keyframes come-in {
     to {
-        transform: translateY(0);
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
 }

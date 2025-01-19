@@ -1,13 +1,34 @@
-body {
-    background-image: linear-gradient(to right, #578FA8, #152F41);
+/* body {
+    background-image: linear-gradient(to right, #57a860, #152F41);
     color: white;
-    /* background-image: url("images/pattern_bg.svg"); */
+    
     font-family: 'Montserrat', sans-serif;
-}
+} */
 
 .subject-title {
     font-weight: 600;
 }
+body {
+    background-image: linear-gradient(to right, #81e2fd, #13526a);
+    background-size: 400% 400%;
+    animation: gradientFlow 10s ease infinite;
+    color: white;
+    /* background-image: url("images/pattern_bg.svg"); */
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  /*                   Some of the above codes are for the background animation effect (gradiant)*/
 
 .subject {
     text-decoration: none;
@@ -20,7 +41,30 @@ body {
     padding: 30px;
     text-align: center;
     font-size: 1.4em;
-    transition: all .3s ease-out;
+    transition: all .5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.subject::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(20, 235, 255, 0.644),
+        transparent
+    );
+    transition: 1.0s;
+}
+
+.subject:hover::before,
+.subject:active::before {
+    left: 100%;
 }
 
 .subject:nth-child(3) {
@@ -148,4 +192,86 @@ body {
     .sem-drop .dropdown-menu {
         margin-top: -5px;
     }
+}
+
+/*                        Social Icons Hovering effect                */
+@keyframes socialIconDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-parent .social-icon {
+    animation: socialIconDrop 0.5s ease forwards;
+    opacity: 0;
+}
+
+.social-parent .social-icon:nth-child(1) {
+    animation-delay: 1.0s;
+}
+
+.social-parent .social-icon:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+.social-parent .social-icon:nth-child(3) {
+    animation-delay: 2.0s;
+}
+
+.social-parent .social-icon:nth-child(4) {
+    animation-delay: 2.5s;
+}
+
+/* Keep the existing hover effects */
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    filter: drop-shadow(0 0 8px rgb(255, 255, 255));
+    transform: scale(1.1);
+}
+
+.social-icon:hover i,
+.social-icon:hover img {
+    filter: brightness(1.2);
+}
+
+/*                 Newly Added                         */
+.modal-content {
+    background-color: #2e2a2a;
+    color: white;
+}
+
+.modal-header {
+    border-bottom: 1px solid #ffffff;
+}
+
+.modal-header .close {
+    color: white;
+}
+
+.theme-grid {
+    background-color: #231f1f9f;
+    padding: 15px;
+}
+
+.theme-option {
+    background-color: #3a3a3a;
+    border: 1px solid #404040;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.theme-option:hover {
+    background-color: #4a4a4a;
+    transform: scale(1.05);
 }

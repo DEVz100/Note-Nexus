@@ -23,9 +23,9 @@
               <!-- <input type="text" id="code" required /> -->
               <select id="branch" required>
                 <option value="CHE">CHE</option>
-                <option value="BME">BME</option>
                 <option value="CE">CE</option>
                 <option value="EL">EL</option>
+                <option value="BME">BME</option>
               </select>
             </div>
 
@@ -76,14 +76,9 @@
                 <input  type="text" id="sylUnit" placeholder="Unit" />
                 <input type="text" id="sylTitle" placeholder="Title" />
                 <textarea name="" id="sylContent" rows="5" cols="33"></textarea>
-                <button type="button" onclick="addSyllabus()">Add Syllabus</button>
+                <button type="button" class="add-syllabus-btn" onclick="addSyllabus()">Add Syllabus</button>
               </div>
             </div>
-
-
-              
-        
-            
 
             <!-- Notes Section -->
             <div class="form-section">
@@ -92,13 +87,10 @@
               <div class="add-item-group">
                 <input type="text" id="noteName" placeholder="Note name" />
                 <input type="url" id="noteUrl" placeholder="URL" />
-                <button type="button" onclick="addNote()">Add Note</button>
+                <button type="button" class="add-notes-btn" onclick="addNote()">Add Note</button>
               </div>
             </div>
-
-           
-    
-
+  
             <!-- YouTube Section -->
             <div class="form-section">
               <h3>YouTube Videos</h3>
@@ -106,7 +98,7 @@
               <div class="add-item-group">
                 <input type="text" id="videoName" placeholder="Video name" />
                 <input type="url" id="videoUrl" placeholder="URL" />
-                <button type="button" onclick="addVideo()">Add Video</button>
+                <button type="button" class="add-video-btn" onclick="addVideo()">Add Video</button>
               </div>
             </div>
 

@@ -1,51 +1,75 @@
-var sem1 = ["CHE 101", "CHE 102", "CHE 103", "CHE 104", "CHE 105"];
+var sem1 = ["CHE 101", "CHE 102", "CHE 103", "CHE 104", "CHE 105", "CHE 106", "CHE 107", "CHE 108", "CHE 109", "CHE 110"];
 var subName = [
-  "Mathematics – I",
-  "Technical Communication",
-  "Programming with C",
-  "Introduction to Computers & IT",
-  "Physics",
+  "Communication Skills in English",
+  "Mathematics - I",
+  "Applied Physics",
+  "Applied Chemistry",
+  "Engineering Graphics",
+  "Applied Physics Lab",
+  "Applied Chemistry Lab",
+  "Introduction to IT Systems Lab",
+  "Engineering Workshop Lab",
+  "Sports and Yoga"
 ];
-var sem2 = ["CHE 201", "CHE 202", "CHE 203", "CHE 204", "CHE 205"];
+var sem2 = ["CHE 201", "CHE 202", "CHE 203", "CHE 204", "CHE 205", "CHE 206", "CHE 207", "CHE 208", "CHE 209", "CHE 210"];
 var subName2 = [
-  "elect – II",
-  "Principles of Management",
-  "Digital Electronics",
-  "Data Structure using C",
-  "Database Management System",
+  "Mathematics - II",
+  "Applied Phyics - II",
+  "Environment Science",
+  "Fundamentals of Electrical & Electronics Engineering",
+  "Problem Solving and Programming",
+  "Communication Skills in English Lab",
+  "Applied Physics Lab",
+  "Fundamentals of Electrical & Electronics Engineering Lab",
+  "Problem Solving and Programming Lab",
+  "Engineering Workshop Practice"
 ];
-var sem3 = [
-  "CHE 201",
-  "CHE 203",
-  "CHE 205",
-  "CHE 207",
-  "CHE 209",
-  "CE1 301",
-  "CE1 302",
-  "CE2 302",
-  "CE2 303",
-  "CE2 309",
+var sem3 = ["CHE 301", "CHE 302", "CHE 303", "CHE 304", "CHE 305", "CHE 306", "CHE 307", "CHE 308", "CHE 309"];
+var subName3 = [
+  "Computer System Architecture",
+  "Programming in C",
+  "Computer Networks -I",
+  "Digital Computer Fundamentals",	
+  "Programming in C Lab",
+  "System Administration Lab",
+  "Digital Computer Fundamentals Lab",
+  "Computer Hardware Lab -I",
+  "Application Development Lab"
 ];
-var sem4 = ["CHE 202", "CHE 204", "CHE 206", "CHE 208", "CHE 210", "CE1 401"];
-var sem5 = [
-  "CHE 301",
-  "CHE 303",
-  "CHE 305",
-  "CHE 307",
-  "CHE 309",
-  "CHE 311",
-  "CHE 313",
-  "CHE 315",
+var sem4 = ["CHE 401", "CHE 402", "CHE 403", "CHE 404", "CHE 405", "CHE 406", "CHE 407", "CHE 408", "CHE 409"];
+var subName4 = [
+  "Object Oriented Programming",
+  "Computer Networks II",
+  "Embedded System and Real time Operating System",
+  "Community Skills in Indian knowledge system",
+  "Object Oriented Programming Lab",
+  "Network Administration Lab I",
+  "Embedded system Lab",
+	"Computer Hardware Lab II",
+  "Minor Project"
+];  
+var sem5 = ["CHE 501", "CHE 502", "CHE 503", "CHE 504", "CHE 505", "CHE 506", "CHE 507", "CHE 508", "CHE 509"];
+var subName5 = [
+  "Project Management and Software Engineering",
+  "Internet of Things",
+  "Operating System",
+  "Virtualisation Technology and Cloud Computing/ Web programming/ Data structures",
+  "Internet of Things Lab",
+  "Network Administration Lab II",
+  "Virtualisation Technology and cloud computing Lab/ Web programming Lab/ Data structures Lab",
+  "Seminar",
+  "Major Project"
 ];
-var sem6 = [
-  "CHE 302",
-  "CHE 304",
-  "CHE 306",
-  "CHE 308",
-  "CHE 310",
-  "CHE 312",
-  "CHE 314",
-  "CHE 316",
+var sem6 = ["CHE 601", "CHE 602", "CHE 603", "CHE 604", "CHE 605", "CHE 606", "CHE 607", "CHE 608"];
+var subName6 = [
+  "Entrepreneurship and Startup",
+  "Software Testing/ Introduction to 5G/ Fundamentals of Artificial Intelligence & Machine Learning/ Database Management Systems",
+  "Introduction to IoT/	Multimedia/ Cloud Computing/ Computer System Hardware",
+  "Indian Constitution",
+  "Programming Smart Device Lab",
+  "Ethical Hacking Lab",
+  "Software Testing Lab/ Fundamentals of Artificial Intelligence & Machine Learning Lab/ Database Management Systems Lab",
+  "Major Project"
 ];
 var selectedSem = [];
 
@@ -160,6 +184,54 @@ if (course_id == "CHE" && sem_id == "sem2") {
       "subjects-cont"
     ).innerHTML += ` <a class="subject" href='./notes.html?id=${sub}'>
                 ${subName2[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "CHE" && sem_id == "sem3") {
+  sem3.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes.html?id=${sub}'>
+                ${subName3[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "CHE" && sem_id == "sem4") {
+  sem4.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes.html?id=${sub}'>
+                ${subName4[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "CHE" && sem_id == "sem5") {
+  sem5.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes.html?id=${sub}'>
+                ${subName5[index]}
+                </a>`;
+    console.log(`${sub}`);
+  });
+}
+
+var notesData = {};
+if (course_id == "CHE" && sem_id == "sem6") {
+  sem6.forEach(function (sub, index) {
+    document.getElementById(
+      "subjects-cont"
+    ).innerHTML += ` <a class="subject" href='./notes.html?id=${sub}'>
+                ${subName6[index]}
                 </a>`;
     console.log(`${sub}`);
   });
