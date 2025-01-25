@@ -16,7 +16,7 @@ function logout() {
   window.location.href = "login.html";
 }
 
-// Check authentication on protected pages
+// // Check authentication on protected pages
 function checkAuth() {
   if (!isAuthenticated()) {
     window.location.href = "login.html";

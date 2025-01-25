@@ -82,6 +82,7 @@
           } else if (user.role === "user") {
             // If regular user, redirect to home page
             window.location.href = "/";
+            document.getElementsByClassName("nav-link").innerHTML = "<li><a class=\"nav-link\" href=\"/\">Home</a></li>";
           }
         }
       });

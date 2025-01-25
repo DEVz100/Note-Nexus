@@ -36,7 +36,7 @@
 
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/anim.css" />
-
+    
     <!-- icon library -->
     <link
       rel="stylesheet"
@@ -47,22 +47,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-175250230-2"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-175250230-2");
-
-    </script>
   </head>
   <style>
 
@@ -86,14 +70,7 @@
     .social-icon:hover img {
       filter: brightness(1.2);
     }
-  </style> -->
-   <!-- ... For the library for study materials(Glow effect) ... -->
-<style>
-  body {
-    min-height: 100vh;
-    display: flex;
-    flex-flow: column nowrap;
-  }
+
 
   /* Add new styles for the glow effect */
   #innertext {
@@ -105,10 +82,7 @@
                  0 0 25px rgba(255, 255, 255, 0.7),
                  0 0 35px rgba(255, 255, 255, 0.5);
   }
-</style>  
 
-<!-- Below code is to change the theme grid selection page's Background -->
-<style>
   .modal-content {
       background-color: #2e2a2a;  /* Dark background */
       color: white;  /* Light text */
@@ -142,43 +116,117 @@
       background-color: #4a4a4a;  /* When selecting an icon */
       transform: scale(1.05);
   }
+
+/* styles for the chat bot */
+
+  .chat-container {
+    position: fixed;
+    bottom: 20px;
+            right: 100px;
+            width: 350px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;  
+} 
+
+.chat-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .minimize-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+    
+        .social-icon:hover {
+            filter: drop-shadow(0 0 8px rgb(255, 255, 255));
+            transform: scale(1.1);
+        }
+
+#chat-box {
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f8f9fa;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user {
+    background-color: #007bff;
+    color: white;
+    margin-left: auto;
+}
+
+.bot {
+    background-color: #e9ecef;
+    color: #212529;
+    margin-right: auto;
+}
+
+#user-input {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    width: calc(100% - 24px);
+    outline: none;
+    font-size: 14px;
+}
+
+#send-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+   
+  }
+
+#send-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Scrollbar styling */
+#chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+#chat-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 </style>
-<!-- Above code is to change the theme selection page's BG -->
 
-<!-- <style>
-  /*           Style for dropdown menu                      */
-  .dropdown-menu {
-      background-color: #2a2a2a;
-      border: 1px solid #404040;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  }
-
-  .dropdown-item {
-      color: white;
-      transition: all 0.3s ease;
-      padding: 6px 25px;
-  }
-
-  .dropdown-item:hover {
-      background-color: #3a3a3a;
-      color: #fff;
-      transform: translateX(5px);
-  }
-
-  /* Add separator between items */
-  .dropdown-item:not(:last-child) {
-      border-bottom: 1px solid #404040;
-  }
-
-  /* Optional: Add arrow indicator */
-  .dropdown-toggle::after {
-      transition: transform 0.3s ease;
-  }
-
-  .dropdown.show .dropdown-toggle::after {
-      transform: rotate(180deg);
-  }
-</style> -->
 
 
   <body class="light">
@@ -214,6 +262,8 @@
               localStorage.removeItem("user");
               window.location.href = "/login";
             }
+
+            
           </script>
 
           <li class="nav-item text-center">
@@ -251,21 +301,7 @@
           <i class="bi bi-palette"></i>
         </a>
 
-          <!-- <li class="nav-item d-lg-none">
-
-            <a class="nav-link" onclick="changePageTheme()">Change Theme</a>
-          </li>
-
-          <a
-            class="btn-theme d-none d-lg-inline-flex"
-            onclick="changePageTheme()"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="Change theme"
-            ><i class="bi bi-moon theme-icon"></i
-
-          ></a> -->
-
+        
         </ul>
       </div>
     </nav>
@@ -287,11 +323,7 @@
         </div>
       </div>
 
-      <!-- <div class="d-flex come-in2 justify-content-center align-self-center mt-md-5 pos">
-      <a class="btnAndroid my-4 text-center" href="https://xbotics7.github.io/NomtesApp/" target="_blank">
-        <i class="fa fa-android pr-2"></i> Android App
-      </a>
-    </div> -->
+    
 
       <div class="social-parent come-in2">
         <a class="social-icon slide-in-top" style="animation-delay: 1.0s;" href="https://github.com/DEVz100" target="_blank">
@@ -306,8 +338,12 @@
         <a class="social-icon slide-in-top" style="animation-delay: 1.6s;" href="https://twitter.com/xbotics7" target="_blank">
           <i class="fa fa-twitter fa-lg icons"></i>
         </a>
-      </div>
+      </div> 
+   
   </section>
+
+
+ 
 
   <div class="modal fade" id="themeModal" tabindex="-1" aria-labelledby="themeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -366,6 +402,39 @@
     </div>
   </div>
 
+  <div class="chat-container" id="chat-widget">
+    <div class="chat-header">
+        <span>AI Study Assistant</span>
+        <button class="minimize-btn" id="minimize-chat">−</button>
+    </div>
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Ask me anything about your studies..." />
+    <button id="send-btn">Send</button>
+</div>
+
+
+
+<script>
+  // Chat widget minimize/maximize functionality
+  document.getElementById('minimize-chat').addEventListener('click', function() {
+      const chatBox = document.getElementById('chat-box');
+      const userInput = document.getElementById('user-input');
+      const sendBtn = document.getElementById('send-btn');
+      const minimizeBtn = this;
+
+      if (chatBox.style.display === 'none') {
+          chatBox.style.display = 'block';
+          userInput.style.display = 'block';
+          sendBtn.style.display = 'block';
+          minimizeBtn.innerHTML = '-';
+      } else {
+          chatBox.style.display = 'none';
+          userInput.style.display = 'none';
+          sendBtn.style.display = 'none';
+          minimizeBtn.innerHTML = '+';
+      }
+  });
+</script>
   
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -394,8 +463,76 @@
         // Hide admin elements if user is not admin
         if (user.role !== 'admin') {
             const adminElements = document.querySelectorAll('.admin-only');
-            adminElements.forEach(el => el.style.display = 'none');
+            adminElements.forEach(el => el.style.display = 'none');       
         }
     });
+
+    document.getElementById('send-btn').addEventListener('click', sendMessage);
+document.getElementById('user-input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+function sendMessage() {
+    const userInput = document.getElementById('user-input').value;
+    if (userInput.trim() === "") return;
+
+    appendMessage('user', userInput);
+    document.getElementById('user-input').value = '';
+
+    // Call Gemini API
+    fetchGeminiResponse(userInput).then(response => {
+        appendMessage('bot', response);
+    });
+}
+
+function appendMessage(sender, message) {
+    const chatBox = document.getElementById('chat-box');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message', sender);
+    messageElement.textContent = message;
+    chatBox.appendChild(messageElement);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+
+    async function fetchGeminiResponse(userInput) {
+        const apiKey = 'AIzaSyBvFl6FLwoBuNqPHQtiq-3sspBhRAZ8ADo'; // Replace with your actual API key
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+    
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    contents: [
+                        {
+                            role: 'user',
+                            parts: [
+                                {
+                                    text: userInput,
+                                },
+                            ],
+                        },
+                    ],
+                }),
+            });
+    
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+    
+            const data = await response.json();
+            return data.candidates[0].content.parts[0].text; // Extract the response text
+        } catch (error) {
+            console.error('Error fetching Gemini response:', error);
+            return 'Sorry, something went wrong. Please try again.';
+        }
+    }
+
+
   </script>
 </html>
